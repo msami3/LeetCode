@@ -1,0 +1,6 @@
+# Write your MySQL query statement below
+SELECT class
+FROM (SELECT class, count(class) AS numStudents
+FROM Courses
+GROUP BY class) AS countCourses
+WHERE countCourses.numStudents >= 5

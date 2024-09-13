@@ -1,0 +1,7 @@
+# Write your MySQL query statement below
+
+select distinct Person.email
+from Person 
+left join (select * from Person group by email) as t2
+on Person.id = t2.id
+where t2.id is null;

@@ -1,0 +1,22 @@
+import "sort"
+
+func missingNumber(nums []int) int {
+    var answer int
+    found := false
+    sort.Ints(nums[:])
+
+    for i:=0; i < len(nums); i++{
+        if nums[i] != i{
+            answer = i
+            found = true
+            break
+        }
+    }
+
+    if !found{
+        return len(nums)
+    }
+
+    return answer
+
+}
